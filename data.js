@@ -172,7 +172,7 @@ const episodes = [
 
     // Season 15
     {season: 15, episode: 1, title: "The Tina Table: The Tables Have Tina-Ed", description: "Tine attempts to save her school new segment by interviewing Mr. Drond."},
-    {season: 15, episode: 2, title: "Saving Favorite Drive-In", "Bob comes up with a plan to save the local drive-in theater from closing."},
+    {season: 15, episode: 2, title: "Saving Favorite Drive-In", description: "Bob comes up with a plan to save the local drive-in theater from closing."},
     {season: 15, episode: 3, title: "Colon-ly the Dronely", description: "Linda agrees to drive Teddy to pick up Kathleen from her colonoscopy."},
     {season: 15, episode: 4, title: "For Whom the Doll Toes", description: "Louise stages a murder mystery in a creepy old dollhouse store."},
     {season: 15, episode: 5, title: "Don't Stop Be-Cheesin", description: "Louise trains Tina to be the last student standing during a cheese throwing battle."},
