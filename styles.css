@@ -63,8 +63,6 @@ h1 {
     margin: 30px 0;
     min-height: 300px;
     position: relative;
-    /* Remove overflow: hidden so lights can extend outside */
-    /* overflow: hidden; */
 }
 
 .slot-window {
@@ -80,215 +78,28 @@ h1 {
         inset 0 10px 20px rgba(0, 0, 0, 0.8),
         inset 0 -10px 20px rgba(0, 0, 0, 0.8),
         0 5px 15px rgba(0, 0, 0, 0.5);
-}
-
-.slot-window::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 30px;
-    background: linear-gradient(180deg,
-        rgba(0, 0, 0, 0.9) 0%,
-        rgba(0, 0, 0, 0.6) 50%,
-        transparent 100%);
-    z-index: 10;
-    pointer-events: none;
-}
-
-.slot-window::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 30px;
-    background: linear-gradient(0deg,
-        rgba(0, 0, 0, 0.9) 0%,
-        rgba(0, 0, 0, 0.6) 50%,
-        transparent 100%);
-    z-index: 10;
-    pointer-events: none;
-}
-
-.side-lights {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 20px;
-    height: 160px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    z-index: 25; /* Higher z-index to ensure they're on top */
-}
-
-.side-lights.left {
-}
-
-.side-lights.right {
-}
-
-.rainbow-light {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #ff0000;
-    box-shadow: 0 0 15px currentColor;
-    transition: all 0.3s ease;
-}
-
-/* Rainbow color cycling animation */
-.rainbow-light:nth-child(1) { animation: rainbow-1 2s infinite linear; }
-.rainbow-light:nth-child(2) { animation: rainbow-2 2s infinite linear; }
-.rainbow-light:nth-child(3) { animation: rainbow-3 2s infinite linear; }
-.rainbow-light:nth-child(4) { animation: rainbow-4 2s infinite linear; }
-.rainbow-light:nth-child(5) { animation: rainbow-5 2s infinite linear; }
-.rainbow-light:nth-child(6) { animation: rainbow-6 2s infinite linear; }
-.rainbow-light:nth-child(7) { animation: rainbow-7 2s infinite linear; }
-
-@keyframes rainbow-1 {
-    0% { background: #ff0000; box-shadow: 0 0 20px #ff0000; }
-    14% { background: #ff7f00; box-shadow: 0 0 20px #ff7f00; }
-    28% { background: #ffff00; box-shadow: 0 0 20px #ffff00; }
-    42% { background: #00ff00; box-shadow: 0 0 20px #00ff00; }
-    57% { background: #0000ff; box-shadow: 0 0 20px #0000ff; }
-    71% { background: #4b0082; box-shadow: 0 0 20px #4b0082; }
-    85% { background: #9400d3; box-shadow: 0 0 20px #9400d3; }
-    100% { background: #ff0000; box-shadow: 0 0 20px #ff0000; }
-}
-
-@keyframes rainbow-2 {
-    0% { background: #ff7f00; box-shadow: 0 0 20px #ff7f00; }
-    14% { background: #ffff00; box-shadow: 0 0 20px #ffff00; }
-    28% { background: #00ff00; box-shadow: 0 0 20px #00ff00; }
-    42% { background: #0000ff; box-shadow: 0 0 20px #0000ff; }
-    57% { background: #4b0082; box-shadow: 0 0 20px #4b0082; }
-    71% { background: #9400d3; box-shadow: 0 0 20px #9400d3; }
-    85% { background: #ff0000; box-shadow: 0 0 20px #ff0000; }
-    100% { background: #ff7f00; box-shadow: 0 0 20px #ff7f00; }
-}
-
-@keyframes rainbow-3 {
-    0% { background: #ffff00; box-shadow: 0 0 20px #ffff00; }
-    14% { background: #00ff00; box-shadow: 0 0 20px #00ff00; }
-    28% { background: #0000ff; box-shadow: 0 0 20px #0000ff; }
-    42% { background: #4b0082; box-shadow: 0 0 20px #4b0082; }
-    57% { background: #9400d3; box-shadow: 0 0 20px #9400d3; }
-    71% { background: #ff0000; box-shadow: 0 0 20px #ff0000; }
-    85% { background: #ff7f00; box-shadow: 0 0 20px #ff7f00; }
-    100% { background: #ffff00; box-shadow: 0 0 20px #ffff00; }
-}
-
-@keyframes rainbow-4 {
-    0% { background: #00ff00; box-shadow: 0 0 20px #00ff00; }
-    14% { background: #0000ff; box-shadow: 0 0 20px #0000ff; }
-    28% { background: #4b0082; box-shadow: 0 0 20px #4b0082; }
-    42% { background: #9400d3; box-shadow: 0 0 20px #9400d3; }
-    57% { background: #ff0000; box-shadow: 0 0 20px #ff0000; }
-    71% { background: #ff7f00; box-shadow: 0 0 20px #ff7f00; }
-    85% { background: #ffff00; box-shadow: 0 0 20px #ffff00; }
-    100% { background: #00ff00; box-shadow: 0 0 20px #00ff00; }
-}
-
-@keyframes rainbow-5 {
-    0% { background: #0000ff; box-shadow: 0 0 20px #0000ff; }
-    14% { background: #4b0082; box-shadow: 0 0 20px #4b0082; }
-    28% { background: #9400d3; box-shadow: 0 0 20px #9400d3; }
-    42% { background: #ff0000; box-shadow: 0 0 20px #ff0000; }
-    57% { background: #ff7f00; box-shadow: 0 0 20px #ff7f00; }
-    71% { background: #ffff00; box-shadow: 0 0 20px #ffff00; }
-    85% { background: #00ff00; box-shadow: 0 0 20px #00ff00; }
-    100% { background: #0000ff; box-shadow: 0 0 20px #0000ff; }
-}
-
-@keyframes rainbow-6 {
-    0% { background: #4b0082; box-shadow: 0 0 20px #4b0082; }
-    14% { background: #9400d3; box-shadow: 0 0 20px #9400d3; }
-    28% { background: #ff0000; box-shadow: 0 0 20px #ff0000; }
-    42% { background: #ff7f00; box-shadow: 0 0 20px #ff7f00; }
-    57% { background: #ffff00; box-shadow: 0 0 20px #ffff00; }
-    71% { background: #00ff00; box-shadow: 0 0 20px #00ff00; }
-    85% { background: #0000ff; box-shadow: 0 0 20px #0000ff; }
-    100% { background: #4b0082; box-shadow: 0 0 20px #4b0082; }
-}
-
-@keyframes rainbow-7 {
-    0% { background: #9400d3; box-shadow: 0 0 20px #9400d3; }
-    14% { background: #ff0000; box-shadow: 0 0 20px #ff0000; }
-    28% { background: #ff7f00; box-shadow: 0 0 20px #ff7f00; }
-    42% { background: #ffff00; box-shadow: 0 0 20px #ffff00; }
-    57% { background: #00ff00; box-shadow: 0 0 20px #00ff00; }
-    71% { background: #0000ff; box-shadow: 0 0 20px #0000ff; }
-    85% { background: #4b0082; box-shadow: 0 0 20px #4b0082; }
-    100% { background: #9400d3; box-shadow: 0 0 20px #9400d3; }
-}
-
-/* Speed up lights during spinning */
-.spinning .rainbow-light {
-    animation-duration: 0.2s !important;
+    flex-direction: row;
 }
 
 .slot-reel {
-    position: absolute;
     width: 100%;
     transition: transform 0.1s ease-out;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
 }
 
-.slot-item {
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
+.slot-reel-title {
     color: white;
-    text-align: center;
-    border-bottom: 2px solid #f39c12;
+}
+
+.slot-item {
+    color: white;
+    font-size: 3em;
+    top: 30%;
     position: relative;
 }
 
-.slot-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 10%;
-    right: 10%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, #f39c12, transparent);
-    opacity: 0.6;
-}
-
-.slot-item::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 5%;
-    right: 5%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #e67e22, #f39c12, #e67e22, transparent);
-    box-shadow: 0 1px 3px rgba(243, 156, 18, 0.3);
-}
-
-/* Remove border from the last visible item to avoid double lines */
-.slot-item:last-child {
-    border-bottom: none;
-}
-
-.slot-item:last-child::after {
-    display: none;
-}
-
-.slot-season-episode {
-    font-size: 1.3em;
-    color: #f39c12;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.slot-title {
+.episode-title {
     font-size: 1.8em;
     color: #ecf0f1;
     font-weight: bold;
@@ -296,7 +107,7 @@ h1 {
     margin-bottom: 15px;
 }
 
-.slot-description {
+.episode-description {
     font-size: 1.1em;
     color: #bdc3c7;
     line-height: 1.5;
@@ -345,35 +156,6 @@ h1 {
 @keyframes pulse {
     0% { transform: scale(1); }
     100% { transform: scale(1.05); }
-}
-
-.slot-lights {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    height: 20px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.light {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: #f39c12;
-    box-shadow: 0 0 10px #f39c12;
-    animation: blink 1s infinite alternate;
-}
-
-.light:nth-child(2n) {
-    animation-delay: 0.5s;
-}
-
-@keyframes blink {
-    0% { opacity: 0.3; }
-    100% { opacity: 1; }
 }
 
 .jackpot-text {
