@@ -1,12 +1,14 @@
 const seasonReelId = "season-reel"
+const seasonReelTextId = "season-reel-text"
 const episodeReelId = "episode-reel"
+const episodeReelTextId = "episode-reel-text"
 
 function rollPart1(number, duration) {
   return {
     number,
     animation: [
-      { top: "-60%" },
-      { top: "30%" },
+      { top: "-40%" },
+      { top: "20%" },
     ],
     timing: {
       duration: duration,
@@ -20,8 +22,8 @@ function rollPart2(number, duration) {
   return {
     number,
     animation: [
-      { top: "30%" },
-      { top: "120%" },
+      { top: "15%" },
+      { top: "75%" },
     ],
     timing: {
       duration: duration,
@@ -31,7 +33,7 @@ function rollPart2(number, duration) {
   }
 }
 
-const slotAnimationCount = 30
+const slotAnimationCount = 20
 function slotAnimation(initial, result, randomMin, randomMax) {
   const animations = []
 
@@ -42,8 +44,8 @@ function slotAnimation(initial, result, randomMin, randomMax) {
   for (i = 0; i < slotAnimationCount; i++) {
     const number = Math.floor(Math.random() * (randomMax - randomMin) + randomMin)
     animations.push(
-      rollPart1(number, 50),
-      rollPart2(number, 50),
+      rollPart1(number, 100),
+      rollPart2(number, 100),
     )
   }
 
@@ -52,32 +54,7 @@ function slotAnimation(initial, result, randomMin, randomMax) {
   return animations
 }
 
-const rotateAnimations = [
-  {
-    animation: [
-      { top: "30%"},
-      { top: "120%" },
-    ],
-    timing: {
-      duration: 300,
-      iterations: 1,
-      easing: "ease-in",
-    }
-  },
-  {
-    animation: [
-      { top: "-60%" },
-      { top: "30%" },
-    ],
-    timing: {
-      duration: 300,
-      iterations: 1,
-      easing: "ease-out",
-    }
-  }
-]
-
-function runSlotAnimations(animations, element, onFinish) {
+function runSlotAnimations(animations, element, elementText, onFinish) {
   if (animations.length == 0) {
     if (onFinish) {
       onFinish()
@@ -86,7 +63,7 @@ function runSlotAnimations(animations, element, onFinish) {
     return
   }
 
-  element.innerHTML = animations[0].number
+  elementText.innerHTML = animations[0].number
 
   const animation = element
     .animate(
@@ -98,6 +75,7 @@ function runSlotAnimations(animations, element, onFinish) {
     runSlotAnimations(
       animations.slice(1),
       element,
+      elementText,
       onFinish
     )
 }
@@ -108,39 +86,49 @@ const maxSeason = Math.max(...episodes.map(e => e.season))
 function clickedSpin() {
   console.log("Clicked spin!")
 
+  const episodeTitle = document.getElementById("episode-title")
+  const episodeDescription = document.getElementById("episode-description")
+
+  episodeTitle.innerHTML = "..."
+  episodeDescription.innerHTML = "."
+
   const resultSeason = Math.floor(Math.random() * ((maxSeason + 1) - minSeason) + minSeason)
-  console.log("Season is going to be " + resultSeason)
 
   const minEpisode = 1
   const maxEpisode = Math.max(...episodes.filter(e => e.season === resultSeason).map(e => e.episode))
 
   const resultEpisodeNumber = Math.floor(Math.random() * ((maxEpisode + 1) - minEpisode) + minEpisode)
-  console.log("Episode is going to be " + resultEpisodeNumber)
 
   const resultEpisode = episodes.find((e) => e.season === resultSeason && e.episode === resultEpisodeNumber)
-  console.log(episodes.length)
-
-  console.log(resultEpisode)
 
   const seasonFrames = slotAnimation(1, resultSeason, 1, maxSeason + 1)
   const episodeFrames = slotAnimation(1, resultEpisodeNumber, 1, maxEpisode + 1)
 
-  document.getElementById("spinButton").disabled = true
+  const spinButton = document.getElementById("spinButton")
+  spinButton.disabled = true
+
+  const seasonReel = document.getElementById(seasonReelId)
+  const seasonReelText = document.getElementById(seasonReelTextId)
+  const episodeReel = document.getElementById(episodeReelId)
+  const episodeReelText = document.getElementById(episodeReelTextId)
 
   runSlotAnimations(
     seasonFrames,
-    document.getElementById(seasonReelId),
-    () => runSlotAnimations(
-      episodeFrames,
-      document.getElementById(episodeReelId),
-      () => {
-        document.getElementById("spinButton").disabled = false
-
-        if (resultEpisode) {
-          document.getElementById("episode-title").innerHTML = resultEpisode.title
-          document.getElementById("episode-description").innerHTML = resultEpisode.description
+    seasonReel,
+    seasonReelText,
+    () => {
+      runSlotAnimations(
+        episodeFrames,
+        episodeReel,
+        episodeReelText,
+        () => {
+          spinButton.disabled = false
+          if (resultEpisode) {
+            episodeTitle.innerHTML = resultEpisode.title
+            episodeDescription.innerHTML = resultEpisode.description
+          }
         }
-      }
-    )
+      )
+    }
   )
 }
