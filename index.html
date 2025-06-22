@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Bob's Burgers Episode Slots</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <script type="text/javascript" src="data.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</head>
+<body>
+    <div class="slot-machine">
+        <div class="jackpot-text">🍔 JACKPOT 🍔</div>
+        <h1>🎰 Bob's Slots 🎰</h1>
+        <p class="subtitle">Episode Spinner Deluxe</p>
+
+        <div class="slots-container">
+            <div class="slot-lights">
+                <div class="light"></div>
+                <div class="light"></div>
+                <div class="light"></div>
+                <div class="light"></div>
+                <div class="light"></div>
+                <div class="light"></div>
+                <div class="light"></div>
+            </div>
+
+            <div class="slot-window" id="slotWindow">
+                <div class="side-lights left">
+                    <div class="rainbow-light"></div>
+                    <div class="rainbow-light"></div>
+                    <div class="rainbow-light"></div>
+                    <div class="rainbow-light"></div>
+                    <div class="rainbow-light"></div>
+                    <div class="rainbow-light"></div>
+                    <div class="rainbow-light"></div>
+                </div>
+
+                <div class="slot-reel" id="slotReel">
+                    <div class="slot-item">
+                        <div class="slot-season-episode">Click Spin to Start!</div>
+                        <div class="slot-title">🍔 Ready to Roll? 🍔</div>
+                        <div class="slot-description">Hit that spin button and let's find your next Bob's Burgers episode!</div>
+                    </div>
+                </div>
+
+                <div class="side-lights right">
+                    <div class="rainbow-light"></div>
+                    <div class="rainbow-light"></div>
+                    <div class="rainbow-light"></div>
+                    <div class="rainbow-light"></div>
+                    <div class="rainbow-light"></div>
+                    <div class="rainbow-light"></div>
+                    <div class="rainbow-light"></div>
+                </div>
+            </div>
+        </div>
+
+        <button class="spin-button" id="spinButton" onclick="spinSlots()">
+            <span id="buttonText">🎰 SPIN 🎰</span>
+        </button>
+    </div>
+</body>
+</html>
