@@ -1,19 +1,19 @@
 // Bob's Burgers episodes data (same as before)
 const episodes = [
     // Season 1
-    {season: 1, episode: 1, title: "Human Flesh", description: "Bob's burgers are suspected to be made of human flesh."},
-    {season: 1, episode: 2, title: "Crawl Space", description: "Bob gets stuck in the walls of the restaurant."},
-    {season: 1, episode: 3, title: "Sacred Couch", description: "The Belchers get a new couch but can't agree on the old one."},
-    {season: 1, episode: 4, title: "Sexy Dance Fighting", description: "Tina joins a martial arts class to impress Jimmy Jr."},
-    {season: 1, episode: 5, title: "Hamburger Dinner Theater", description: "Bob creates a dinner theater to compete with a fancy restaurant."},
-    {season: 1, episode: 6, title: "Sheesh! Cab, Bob?", description: "Bob becomes a taxi driver to make extra money."},
-    {season: 1, episode: 7, title: "Bed & Breakfast", description: "Linda turns the apartment into a bed and breakfast."},
-    {season: 1, episode: 8, title: "Art Crawl", description: "Linda's art becomes controversial in the local art show."},
-    {season: 1, episode: 9, title: "Spaghetti Western and Meatballs", description: "Bob enters a spaghetti western cooking contest."},
-    {season: 1, episode: 10, title: "Burger War", description: "Bob and Jimmy Pesto get into a heated rivalry."},
-    {season: 1, episode: 11, title: "Weekend at Mort's", description: "The kids spend the weekend at Mort's funeral home."},
-    {season: 1, episode: 12, title: "Lobsterfest", description: "Bob competes in the annual Lobsterfest competition."},
-    {season: 1, episode: 13, title: "Torpedo", description: "Bob's old friend visits with his wrestling persona."},
+    {season: 1, episode: 1, title: "Human Flesh", description: "Bob's Burgers opens for business."},
+    {season: 1, episode: 2, title: "Crawl Space", description: "Linda's mother comes for a visit."},
+    {season: 1, episode: 3, title: "Sacred Couch", description: "A controversial documentary filmmaker places a live cow outside of the family restaurant."},
+    {season: 1, episode: 4, title: "Sexy Dance Fighting", description: "Tina pursues the object of her affection."},
+    {season: 1, episode: 5, title: "Hamburger Dinner Theater", description: "Linda explores her creative side."},
+    {season: 1, episode: 6, title: "Sheesh! Cab, Bob?", description: "Tina has a monster crush."},
+    {season: 1, episode: 7, title: "Bed & Breakfast", description: "Linda opens a bed and breakfast."},
+    {season: 1, episode: 8, title: "Art Crawl", description: "It's Bob versus the Art Council."},
+    {season: 1, episode: 9, title: "Spaghetti Western and Meatballs", description: "Louise has a beef when Bob and Gene find some common ground."},
+    {season: 1, episode: 10, title: "Burger War", description: "Bob cooks up a way to save the restaurant."},
+    {season: 1, episode: 11, title: "Weekend at Mort's", description: "Mort meets a mate - maybe."},
+    {season: 1, episode: 12, title: "Lobsterfest", description: "Claws and tails."},
+    {season: 1, episode: 13, title: "Torpedo", description: "Bob sees the dark side of minor-league sports."},
 
     // Season 2
     {season: 2, episode: 1, title: "The Belchies", description: "The kids explore an abandoned taffy factory."},
@@ -168,5 +168,22 @@ const episodes = [
     {season: 14, episode: 7, title: "Dine and Bash", description: "Bob caters a fancy dinner party."},
     {season: 14, episode: 8, title: "Wharf, Me Worry?", description: "The kids explore the wharf and get into trouble."},
     {season: 14, episode: 9, title: "The Big Stieblitzki", description: "Gene enters a music competition."},
-    {season: 14, episode: 10, title: "The Nightmare 2 Days Before Christmas", description: "Christmas preparations go hilariously wrong."}
+    {season: 14, episode: 10, title: "The Nightmare 2 Days Before Christmas", description: "Christmas preparations go hilariously wrong."},
+
+    // Season 15
+    {season: 15, episode: 1, title: "The Tina Table: The Tables Have Tina-Ed", description: "Tine attempts to save her school new segment by interviewing Mr. Drond."},
+    {season: 15, episode: 2, title: "Saving Favorite Drive-In", "Bob comes up with a plan to save the local drive-in theater from closing."},
+    {season: 15, episode: 3, title: "Colon-ly the Dronely", description: "Linda agrees to drive Teddy to pick up Kathleen from her colonoscopy."},
+    {season: 15, episode: 4, title: "For Whom the Doll Toes", description: "Louise stages a murder mystery in a creepy old dollhouse store."},
+    {season: 15, episode: 5, title: "Don't Stop Be-Cheesin", description: "Louise trains Tina to be the last student standing during a cheese throwing battle."},
+    {season: 15, episode: 6, title: "Hope N' Mic Night", description: "The kids want to host an open mic night at the restaurant."},
+    {season: 15, episode: 7, title: "Boogie Days", description: "Louise signs up for a father-daughter boggie board contest."},
+    {season: 15, episode: 8, title: "They Slug Horses, Don't They?", description: "Tina and Louise get into an argument that escalates across several graphic “apology” cards."},
+    {season: 15, episode: 9, title: "Dog Christmas Day After Afternoon", description: "A trip to see Christmas lights turns into a rescue mission."},
+    {season: 15, episode: 10, title: "Advice Things Are Ad-nice", description: "Tina becomes the new advice columnist for the school newspaper."},
+    {season: 15, episode: 11, title: "Mr. Fischoeder's Opus", description: "Mr. Fischoeder gets the chance to conduct his favorite symphony."},
+    {season: 15, episode: 12, title: "Like a Candle in the Gym", description: "The kids stumble into a bizarre conspiracy theory."},
+    {season: 15, episode: 13, title: "Snackface", description: "Tina, Gene, and Louise strike it rich in the illegal snack business at school."},
+    {season: 15, episode: 14, title: "The Place Beyond the Pinecones", description: "Tina and the Thundergirls spend the night in the woods, and Tina faces something even scarier than her nemesis, Troop 257."},
+    {season: 15, episode: 15, title: "The Lost City of Atlantic", description: "The Belchers have a wild night at a casino."},
 ];
